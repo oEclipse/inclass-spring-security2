@@ -111,10 +111,10 @@ class ProductRepositoryTest {
 
         // 상품 상태가 PREPARING, IN_STOCK 인 상품 리스트 조회
         List<Product> inStockProductList = productRepository.findByStatusList(
-            List.of(
-                ProductStatusEnum.PREPARING,
-                ProductStatusEnum.IN_STOCK
-            )
+                List.of(
+                        ProductStatusEnum.PREPARING,
+                        ProductStatusEnum.IN_STOCK
+                )
         );
         inStockProductList.forEach(System.out::println);
     }
@@ -128,10 +128,10 @@ class ProductRepositoryTest {
 
         // 상품 상태가 PREPARING, IN_STOCK 인 상품 리스트 조회
         List<Product> inStockProductList = productRepository.findByStatusListNative(
-            List.of(
-                ProductStatusEnum.PREPARING,
-                ProductStatusEnum.IN_STOCK
-            )
+                List.of(
+                        ProductStatusEnum.PREPARING,
+                        ProductStatusEnum.IN_STOCK
+                )
         );
         inStockProductList.forEach(System.out::println);
     }
@@ -148,8 +148,8 @@ class ProductRepositoryTest {
 
         // 상품 가격이 5000 이상 10000 이하인 상품 리스트 조회
         JPAQuery<Product> query = queryFactory
-            .selectFrom(QProduct.product)
-            .where(QProduct.product.price.between(5000, 10000));
+                .selectFrom(QProduct.product)
+                .where(QProduct.product.price.between(5000, 10000));
 
         // 코드 흐름에 따라 정렬 여부 지정
         boolean orderByPriceAsc = true;  // 웹에서 사용자 입력으로 받았을 경우 동적 쿼리 체감 가능

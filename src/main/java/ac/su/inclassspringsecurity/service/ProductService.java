@@ -107,13 +107,13 @@ public class ProductService {
         Pageable pageable = PageRequest.of(page, size);
         BooleanBuilder predicate = new BooleanBuilder();
         predicate.or(
-            QProduct.product.status.eq(ProductStatusEnum.IN_STOCK)
+                QProduct.product.status.eq(ProductStatusEnum.IN_STOCK)
         );
         predicate.or(
-            QProduct.product.status.eq(ProductStatusEnum.PREPARING)
+                QProduct.product.status.eq(ProductStatusEnum.PREPARING)
         );
         predicate.or(
-            QProduct.product.status.eq(ProductStatusEnum.SOLD_OUT)
+                QProduct.product.status.eq(ProductStatusEnum.SOLD_OUT)
         );
         Page<Product> productPage = productRepository.findAll(predicate, pageable);
         return productPage.getContent();
@@ -124,13 +124,13 @@ public class ProductService {
         Pageable pageable = PageRequest.of(page, size);
         BooleanBuilder predicate = new BooleanBuilder();
         predicate.or(
-            QProduct.product.status.eq(ProductStatusEnum.IN_STOCK)
+                QProduct.product.status.eq(ProductStatusEnum.IN_STOCK)
         );
         predicate.or(
-            QProduct.product.status.eq(ProductStatusEnum.PREPARING)
+                QProduct.product.status.eq(ProductStatusEnum.PREPARING)
         );
         predicate.or(
-            QProduct.product.status.eq(ProductStatusEnum.SOLD_OUT)
+                QProduct.product.status.eq(ProductStatusEnum.SOLD_OUT)
         );
         return productRepository.findAll(predicate, pageable);
     }

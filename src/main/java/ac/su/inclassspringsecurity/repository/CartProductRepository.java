@@ -2,6 +2,7 @@ package ac.su.inclassspringsecurity.repository;
 
 import ac.su.inclassspringsecurity.domain.CartProduct;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 
 import java.util.List;
